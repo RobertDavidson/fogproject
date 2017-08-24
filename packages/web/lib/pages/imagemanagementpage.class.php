@@ -1199,6 +1199,7 @@ class ImageManagementPage extends FOGPage
                     ->set(
                         'isEnabled',
                         isset($_REQUEST['isEnabled'])
+					)
                     ->set(
                         'isHidden',
                         isset($_REQUEST['isHidden'])
