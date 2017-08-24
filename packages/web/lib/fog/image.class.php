@@ -53,6 +53,7 @@ class Image extends FOGController
         'isEnabled' => 'imageEnabled',
         'toReplicate' => 'imageReplicate',
         'srvsize' => 'imageServerSize',
+		'isHidden' => 'imageHidden',
     );
     /**
      * The required fields

@@ -3764,3 +3764,7 @@ $this->schema[] = array(
     . "'If exporting, require authentication or not. (Defaults to on)',"
     . "'1','General Settings')"
 );
+// 261
+$this->schema[] = array(
+    "ALTER TABLE `images` ADD `imageHidden` ENUM('0','1') NOT NULL DEFAULT '0'"
+);

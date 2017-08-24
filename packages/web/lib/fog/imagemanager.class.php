@@ -60,7 +60,8 @@ class ImageManager extends FOGManagerController
                 'imageLastDeploy',
                 'imageCompress',
                 'imageEnabled',
-                'imageReplicate'
+                'imageReplicate',
+				'imageHidden'
             ),
             array(
                 'INTEGER',
@@ -80,7 +81,8 @@ class ImageManager extends FOGManagerController
                 'DATETIME',
                 $compress,
                 "ENUM('0', '1')",
-                "ENUM('0', '1')"
+                "ENUM('0', '1')",
+				"ENUM('0', '0')"
             ),
             array(
                 false,
@@ -100,7 +102,8 @@ class ImageManager extends FOGManagerController
                 false,
                 false,
                 false,
-                false
+                false,
+				false
             ),
             array(
                 false,
@@ -120,7 +123,8 @@ class ImageManager extends FOGManagerController
                 false,
                 false,
                 false,
-                false
+                false,
+				false
             ),
             array(
                 'imageID',

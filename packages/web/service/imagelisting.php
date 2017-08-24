@@ -28,7 +28,9 @@ try {
             _('There are no images on this server')
         );
     }
-    $imageids = FOGCore::getSubObjectIDs('Image');
+    $imageids = FOGCore::getSubObjectIDs('Image',
+		array('isHidden' => 0),
+		'id');
     $imagenames = FOGCore::getSubObjectIDs(
         'Image',
         array('id' => $imageids),

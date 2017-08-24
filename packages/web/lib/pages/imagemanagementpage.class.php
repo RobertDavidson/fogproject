@@ -557,6 +557,9 @@ class ImageManagementPage extends FOGPage
             _('Image Enabled') => '<input type="checkbox" '
             . 'name="isEnabled" value="1" id="isEnabled" checked/>'
             . '<label for="isEnabled"></label>',
+            _('Image Hidden') => '<input type="checkbox" '
+            . 'name="isHidden" value="0" id="isHidden" />'
+            . '<label for="isHidden"></label>',			
             _('Replicate?') => '<input type="checkbox" '
             . 'name="toReplicate" value="1" id="toRep" checked/>'
             . '<label for="toRep"></label>',
@@ -665,6 +668,7 @@ class ImageManagementPage extends FOGPage
                 ->set('imagePartitionTypeID', $_REQUEST['imagepartitiontype'])
                 ->set('compress', $_REQUEST['compress'])
                 ->set('isEnabled', (string)intval(isset($_REQUEST['isEnabled'])))
+				->set('isHidden', (string)intval(isset($_REQUEST['isHidden'])))
                 ->set('format', $_REQUEST['imagemanage'])
                 ->set('toReplicate', (string)intval(isset($_REQUEST['toReplicate'])))
                 ->addGroup($_REQUEST['storagegroup']);
@@ -870,6 +874,15 @@ class ImageManagementPage extends FOGPage
                 . 'isEn" %s/><label for="isEn"></label>',
                 (
                     $this->obj->get('isEnabled') ?
+                    ' checked' :
+                    ''
+                )
+            ),
+            _('Image Hidden') => sprintf(
+                '<input type="checkbox" name="isHidden" value="1" id="'
+                . 'isHi" %s/><label for="isHi"></label>',
+                (
+                    $this->obj->get('isHidden') ?
                     ' checked' :
                     ''
                 )
@@ -1186,6 +1199,9 @@ class ImageManagementPage extends FOGPage
                     ->set(
                         'isEnabled',
                         isset($_REQUEST['isEnabled'])
+                    ->set(
+                        'isHidden',
+                        isset($_REQUEST['isHidden'])
                     )
                     ->set(
                         'toReplicate',
